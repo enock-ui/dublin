@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-e&3tjej3)xm(zzrfb5!#8az)1-g&a-2l@*b$5c172za-i9_(2v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG")
 
-ALLOWED_HOSTS = ['enockdublin.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['enockdublin.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'calc.apps.CalcConfig'
 ]
 
 MIDDLEWARE = [
@@ -116,7 +117,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
